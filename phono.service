@@ -1,0 +1,13 @@
+[Unit]
+Description=Phono Exhibition Software
+After=syslog.target network-online.target
+
+[Service]
+User=pi
+
+Type=simple
+ExecStart=/usr/bin/puredata -noadc -nogui /home/pi/phono/phono.pd
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

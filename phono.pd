@@ -1,4 +1,4 @@
-#N canvas 791 93 800 807 10;
+#N canvas 773 93 800 807 10;
 #N canvas 120 255 490 399 readlevel 0;
 #X obj 80 246 textfile;
 #X msg 201 156 bang;
@@ -29,43 +29,42 @@
 #X connect 9 0 11 0;
 #X connect 10 0 0 0;
 #X connect 11 0 10 0;
-#X restore 404 143 pd readlevel;
-#X obj 200 235 *~;
-#X obj 197 335 dac~;
-#X text 64 100 main track;
-#X text 196 68 noise1 input;
-#X text 219 116 noise1 level;
-#X obj 380 230 *~;
-#X obj 428 190 / 127;
-#X text 378 70 noise2 input;
-#X text 405 120 noise2 level;
-#X text 561 67 TO-DO - Bang per attivare i componenti;
-#X obj 514 46 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+#X restore 469 158 pd readlevel;
+#X obj 265 250 *~;
+#X obj 262 350 dac~;
+#X text 129 115 main track;
+#X text 261 83 noise1 input;
+#X text 284 131 noise1 level;
+#X obj 445 245 *~;
+#X obj 493 205 / 127;
+#X text 443 85 noise2 input;
+#X text 470 135 noise2 level;
+#X obj 579 61 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 212 11 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 199 56 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#N canvas 817 143 450 382 readsound 0;
+#N canvas 345 447 450 382 readsound 0;
 #X obj 94 219 readsf~;
 #X msg 187 118 1;
 #X msg 187 159 0;
 #X obj 95 281 outlet~;
-#X msg 34 126 open track.wav;
 #X obj 55 34 inlet;
 #X obj 187 77 delay 500;
 #X obj 159 26 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X text 157 211 The link to the bang plays the track in loop;
+#X msg 34 126 open track.wav;
 #X connect 0 0 3 0;
-#X connect 0 1 7 0;
+#X connect 0 1 6 0;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
-#X connect 4 0 0 0;
-#X connect 5 0 4 0;
-#X connect 5 0 6 0;
-#X connect 6 0 1 0;
-#X connect 7 0 4 0;
-#X connect 7 0 6 0;
-#X restore 58 121 pd readsound;
+#X connect 4 0 8 0;
+#X connect 4 0 5 0;
+#X connect 5 0 1 0;
+#X connect 6 0 8 0;
+#X connect 6 0 5 0;
+#X connect 8 0 0 0;
+#X restore 123 136 pd readsound;
 #N canvas 332 327 450 382 readsound 0;
 #X obj 94 219 readsf~;
 #X msg 187 128 1;
@@ -86,7 +85,7 @@
 #X connect 6 0 0 0;
 #X connect 7 0 6 0;
 #X connect 7 0 5 0;
-#X restore 200 90 pd readsound;
+#X restore 265 105 pd readsound;
 #N canvas 329 340 450 382 readsound 0;
 #X obj 94 219 readsf~;
 #X msg 187 128 1;
@@ -107,14 +106,10 @@
 #X connect 6 0 0 0;
 #X connect 7 0 6 0;
 #X connect 7 0 5 0;
-#X restore 389 92 pd readsound;
-#X obj 319 50 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
+#X restore 454 107 pd readsound;
+#X obj 384 64 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
 -1 -1 0 1;
-#X obj 105 290 *~;
-#X obj 24 238 / 127;
-#X obj 26 62 vsl 15 128 0 127 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 0 1;
-#X obj 253 209 / 127;
+#X obj 318 224 / 127;
 #N canvas 123 242 490 399 readlevel 0;
 #X obj 80 246 textfile;
 #X msg 201 156 bang;
@@ -145,22 +140,25 @@
 #X connect 9 0 11 0;
 #X connect 10 0 0 0;
 #X connect 11 0 10 0;
-#X restore 226 135 pd readlevel;
+#X restore 291 150 pd readlevel;
+#X obj 199 25 loadbang;
+#X msg 47 89 \; pd dsp 1;
+#X obj 47 57 delay 100;
 #X connect 1 0 2 0;
 #X connect 1 0 2 1;
 #X connect 6 0 2 0;
 #X connect 6 0 2 1;
 #X connect 7 0 6 1;
-#X connect 11 0 7 0;
-#X connect 12 0 13 0;
-#X connect 12 0 14 0;
-#X connect 12 0 15 0;
-#X connect 13 0 17 0;
-#X connect 14 0 1 0;
-#X connect 15 0 6 0;
-#X connect 16 0 20 0;
-#X connect 17 0 2 0;
-#X connect 17 0 2 1;
-#X connect 18 0 17 1;
-#X connect 19 0 18 0;
-#X connect 20 0 1 1;
+#X connect 10 0 7 0;
+#X connect 11 0 12 0;
+#X connect 11 0 13 0;
+#X connect 11 0 14 0;
+#X connect 12 0 2 0;
+#X connect 12 0 2 1;
+#X connect 13 0 1 0;
+#X connect 14 0 6 0;
+#X connect 15 0 16 0;
+#X connect 16 0 1 1;
+#X connect 18 0 11 0;
+#X connect 18 0 20 0;
+#X connect 20 0 19 0;
