@@ -1,9 +1,9 @@
-#N canvas 650 141 800 807 10;
-#X obj 223 279 *~;
+#N canvas 638 93 800 807 10;
+#X obj 224 282 *~;
 #X obj 221 379 dac~;
 #X text 88 144 main track;
 #X text 220 112 noise1 input;
-#X obj 421 274 *~;
+#X obj 430 276 *~;
 #X text 419 114 noise2 input;
 #X obj 224 65 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -29,7 +29,7 @@
 #X connect 6 0 5 0;
 #X connect 8 0 0 0;
 #X restore 82 165 pd readsound;
-#N canvas 332 327 450 382 readsound 0;
+#N canvas 329 340 450 382 readsound 0;
 #X obj 94 219 readsf~;
 #X msg 187 128 1;
 #X msg 190 167 0;
@@ -74,18 +74,15 @@
 #X obj 199 25 loadbang;
 #X msg 47 89 \; pd dsp 1;
 #X obj 47 57 delay 100;
-#X obj 292 166 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 332 156 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X floatatom 292 237 5 0 0 0 - - -, f 5;
-#X obj 292 204 readfile 0;
-#X obj 329 171 delay 100;
-#X obj 483 165 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X floatatom 483 236 5 0 0 0 - - -, f 5;
-#X obj 514 171 delay 100;
-#X obj 483 203 readfile 1;
-#X obj 282 263 / 2048;
-#X obj 479 265 / 2048;
+#X floatatom 292 259 5 0 0 0 - - -, f 5;
+#X obj 292 226 readfile 0;
+#X floatatom 480 267 5 0 0 0 - - -, f 5;
+#X obj 480 234 readfile 1;
+#X obj 282 285 / 2047;
+#X obj 476 296 / 2047;
+#X obj 472 177 delay 100;
 #X connect 0 0 1 0;
 #X connect 0 0 1 1;
 #X connect 4 0 1 0;
@@ -94,7 +91,6 @@
 #X connect 6 0 8 0;
 #X connect 6 0 9 0;
 #X connect 6 0 13 0;
-#X connect 6 0 17 0;
 #X connect 7 0 1 0;
 #X connect 7 0 1 1;
 #X connect 8 0 0 0;
@@ -103,14 +99,11 @@
 #X connect 10 0 12 0;
 #X connect 12 0 11 0;
 #X connect 13 0 15 0;
-#X connect 14 0 21 0;
+#X connect 13 0 17 0;
+#X connect 14 0 18 0;
 #X connect 15 0 14 0;
-#X connect 15 1 16 0;
-#X connect 16 0 13 0;
-#X connect 17 0 20 0;
-#X connect 18 0 22 0;
-#X connect 19 0 17 0;
-#X connect 20 0 18 0;
-#X connect 20 1 19 0;
-#X connect 21 0 0 1;
-#X connect 22 0 4 1;
+#X connect 15 1 20 0;
+#X connect 16 0 19 0;
+#X connect 17 0 16 0;
+#X connect 18 0 0 1;
+#X connect 19 0 4 1;
