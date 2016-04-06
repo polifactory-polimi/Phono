@@ -1,0 +1,9 @@
+[Unit]
+Description=Phono Exhibition Software
+After=syslog.target network-online.target
+
+[Timer]
+OnStartupSec=10
+
+[Install]
+WantedBy=timers.target
