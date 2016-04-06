@@ -1,6 +1,6 @@
-#N canvas 638 93 800 807 10;
+#N canvas 632 93 800 807 10;
 #X obj 224 282 *~;
-#X obj 221 379 dac~;
+#X obj 138 393 dac~;
 #X text 88 144 main track;
 #X text 220 112 noise1 input;
 #X obj 430 276 *~;
@@ -83,16 +83,14 @@
 #X obj 282 285 / 2047;
 #X obj 476 296 / 2047;
 #X obj 472 177 delay 100;
-#X connect 0 0 1 0;
-#X connect 0 0 1 1;
-#X connect 4 0 1 0;
-#X connect 4 0 1 1;
+#X obj 151 339 *~ 0.1;
+#X connect 0 0 21 0;
+#X connect 4 0 21 0;
 #X connect 6 0 7 0;
 #X connect 6 0 8 0;
 #X connect 6 0 9 0;
 #X connect 6 0 13 0;
-#X connect 7 0 1 0;
-#X connect 7 0 1 1;
+#X connect 7 0 21 0;
 #X connect 8 0 0 0;
 #X connect 9 0 4 0;
 #X connect 10 0 6 0;
@@ -107,3 +105,6 @@
 #X connect 17 0 16 0;
 #X connect 18 0 0 1;
 #X connect 19 0 4 1;
+#X connect 20 0 13 0;
+#X connect 21 0 1 0;
+#X connect 21 0 1 1;
