@@ -4,10 +4,8 @@ After=syslog.target network-online.target
 
 [Service]
 User=pi
-
 Type=simple
-ExecStart=/usr/bin/puredata -noadc -nogui /home/pi/phono/phono.pd
-TimeoutStopSec=20
+ExecStart=/usr/bin/puredata -noadc -nogui -audiooutdev 3 -audiobuf 100 -blocksize 1024 -rt /home/pi/phono/phono.pd
 
 [Install]
 WantedBy=multi-user.target
